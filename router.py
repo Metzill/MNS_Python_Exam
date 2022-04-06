@@ -4,6 +4,7 @@ from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from vehicule import Vehicle
+import testAPIStatus
 
 app = FastAPI()
 
@@ -13,6 +14,7 @@ datalake = []
 # 1ère route
 @app.get('/')
 def testFnct():
+    testAPIStatus.testAPIStatus()
     return {'API Status': 'ON'}
 
 
